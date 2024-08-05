@@ -28,6 +28,15 @@ const contents = () => {
     contents.innerHTML = contact();
   }
 
+  document.getElementById('title').onclick = () => {
+    sessionStorage.removeItem('jsPortfolioPath');
+    path = 'home';
+    contents.innerHTML = home();
+    document.querySelector('.active').classList.remove('active');
+    document.querySelector('#nav ul li').classList.add('active');
+
+  }
+
   const items = document.querySelectorAll('#nav ul li');
   items.forEach(item => {
 
@@ -46,8 +55,7 @@ const contents = () => {
       setPath(item.innerHTML.toLowerCase())
       contents.innerHTML = content;
     }
-  })
-
+  });
 
   return contents;
 }

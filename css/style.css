@@ -45,6 +45,7 @@ header {
   text-decoration: none;
   transition: all 0.2s linear;
   font-weight: 600;
+  cursor: pointer;
 }
 
 #title:hover {
@@ -66,8 +67,9 @@ header {
 }
 
 .active {
-  border: 2px solid hsl(0, 0%, 80%);
   border-radius: 4px;
+  background-color: hsl(177, 70%, 90%);
+  color: lightseagreen;
 }
 
 #nav ul li:hover {
@@ -138,12 +140,16 @@ footer {
     text-align: center;
   }
 
-  #nav ul li:hover {
+  #nav ul li:not(.active):hover {
     background-color: hsl(0, 0%, 95%);
   }
 
   #nav-toggle-btn {
     display: block;
+  }
+
+  .active {
+    border: none;
   }
   
 }
