@@ -2,7 +2,7 @@
 
 :root {
   --borderColor: hsl(0, 0%, 80%);
-  --boxShadow: 0 1px 4px 1px hsl(0, 0%, 90%);
+  --boxShadow: 0 2px 4px hsl(0, 0%, 90%);
 }
 
 * {
@@ -16,6 +16,7 @@
 
 html {
   scroll-padding-top: 3rem;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -23,9 +24,9 @@ header {
   top: 0;
   width: 100%;
   height: 3rem;
-  border-bottom: 1px solid var(--borderColor);
   box-shadow: var(--boxShadow);
   background-color: hsl(0, 0%, 100%);
+  border-bottom: 1px solid var(--borderColor);
 }
 
 #nav {
@@ -36,6 +37,7 @@ header {
   padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 #title {
@@ -53,17 +55,22 @@ header {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 2rem;
 }
 
-#nav ul li a {
-  text-decoration: none;
+#nav ul li {
   font-weight: 500;
   transition: all 0.2s linear;
   display: block;
+  padding: .5rem 1rem;
+  cursor: pointer;
 }
 
-#nav ul li a:hover {
+.active {
+  border: 2px solid hsl(0, 0%, 80%);
+  border-radius: 4px;
+}
+
+#nav ul li:hover {
   color: lightseagreen;
 }
 
@@ -75,6 +82,7 @@ header {
   border: none;
   background-color: white;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 
 #nav-toggle-btn:hover {
@@ -91,6 +99,8 @@ header {
 
 
 
+
+
 footer {
   display: flex;
   align-items: center;
@@ -102,9 +112,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    box-shadow: none;
-  }
+
   #nav {
     padding-right: 0;
   }
@@ -125,12 +133,12 @@ footer {
     transition: height 0.3s ease-in-out;
   }
 
-  #nav ul li a {
+  #nav ul li {
     padding: 1rem;
     text-align: center;
   }
 
-  #nav ul li a:hover {
+  #nav ul li:hover {
     background-color: hsl(0, 0%, 95%);
   }
 
