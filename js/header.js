@@ -15,7 +15,7 @@ const header = () => {
   title.textContent = 'JsPortfolio';
   nav.appendChild(title);
   const ul = document.createElement('ul');
-  const li = '<li class="active">Home</li><li>About</li><li>Projects</li><li>Contact</li>';
+  const li = '<li>Home</li><li>About</li><li>Projects</li><li>Contact</li>';
   ul.innerHTML = li;
   nav.appendChild(ul);
   const navToggleBtn = document.createElement('button');
