@@ -19,19 +19,24 @@ const contents = () => {
   }
 
   if (path == 'home') {
-    contents.innerHTML = home();
+    contents.innerHTML = '';
+    contents.appendChild(home());
   }else if (path == 'about') {
-    contents.innerHTML = about(); 
+    contents.innerHTML = '';
+    contents.appendChild(about()); 
   }else if (path == 'projects') {
-    contents.innerHTML = projects(); 
+    contents.innerHTML = '';
+    contents.appendChild(projects()); 
   }else if (path == 'contact') {
-    contents.innerHTML = contact();
+    contents.innerHTML = '';
+    contents.appendChild(contact());
   }
 
   document.getElementById('title').onclick = () => {
     sessionStorage.removeItem('jsPortfolioPath');
     path = 'home';
-    contents.innerHTML = home();
+    contents.innerHTML = '';
+    contents.appendChild(home());
     document.querySelector('.active').classList.remove('active');
     document.querySelector('#nav ul li').classList.add('active');
 
@@ -53,7 +58,8 @@ const contents = () => {
       else if (item.innerHTML.toLowerCase() == 'projects') content = projects(); 
       else if (item.innerHTML.toLowerCase() == 'contact') content = contact(); 
       setPath(item.innerHTML.toLowerCase())
-      contents.innerHTML = content;
+      contents.innerHTML = '';
+      contents.appendChild(content);
     }
   });
 
