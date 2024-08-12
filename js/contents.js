@@ -3,6 +3,23 @@ import about from './about.js';
 import contact from './contact.js';
 import projects from './projects.js';
 
+const rgb = () => {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+const spanColorChanger = () => {
+  const span = document.querySelectorAll('.welcomeTextSpan');
+  span.forEach(el => el.style.color = rgb());
+  const svgIcon = document.querySelector('#avatar svg path');
+  svgIcon.setAttribute('fill', rgb());
+  const avatar = document.getElementById('avatar');
+  avatar.style.borderColor = rgb();
+}
+
 const setPath = (path) => {
   sessionStorage.setItem('jsPortfolioPath', path);
 }
@@ -18,9 +35,12 @@ const contents = () => {
     path = 'home';
   }
 
+  let homeInterval;
+
   if (path == 'home') {
     contents.innerHTML = '';
     contents.appendChild(home());
+    homeInterval = setInterval(spanColorChanger, 1000);
   }else if (path == 'about') {
     contents.innerHTML = '';
     contents.appendChild(about()); 
@@ -60,6 +80,10 @@ const contents = () => {
       setPath(item.innerHTML.toLowerCase())
       contents.innerHTML = '';
       contents.appendChild(content);
+      if (item.innerHTML.toLowerCase() == 'home') {
+        homeInterval = setInterval(spanColorChanger, 1000);
+      }
+      else clearInterval(homeInterval); 
     }
   });
 

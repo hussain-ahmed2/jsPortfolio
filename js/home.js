@@ -1,19 +1,4 @@
-const rgb = () => {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
 
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-const spanColorChanger = () => {
-  const span = document.querySelectorAll('.welcomeTextSpan');
-  span.forEach(el => el.style.color = rgb());
-  const svgIcon = document.querySelector('#avatar svg path');
-  svgIcon.setAttribute('fill', rgb());
-  const avatar = document.getElementById('avatar');
-  avatar.style.borderColor = rgb();
-}
 
 const home = () => {
 
@@ -36,8 +21,6 @@ const home = () => {
 
   home.appendChild(welcomeText);
   home.appendChild(svg);
-
-  setInterval(spanColorChanger, 1000);
 
   return home;
 }
