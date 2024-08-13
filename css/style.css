@@ -112,6 +112,7 @@ header {
   border: 2px solid;
   border-radius: 50%;
   padding: 2rem;
+  transition: all 0.2s linear;
 }
 
 #welcomeText {
@@ -126,6 +127,10 @@ header {
 #avatar svg {
   width: 100%;
   height: fit-content;
+}
+
+#avatar svg path {
+  transition: all 0.2s linear;
 }
 
 
