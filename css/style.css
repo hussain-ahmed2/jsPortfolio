@@ -165,6 +165,41 @@ header {
 
 
 
+#contact {
+  padding: 2rem;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+#contact form input, #contact form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  max-width: 100%;
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+}
+
+#contact form input:focus, #contact form textarea:focus {
+  outline-color: lightseagreen;
+}
+
+#contact form input[type=submit] {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#contact form input[type=submit]:hover {
+  color: lightseagreen;
+  border-color: lightseagreen;
+}
+
 footer {
   display: flex;
   align-items: center;
