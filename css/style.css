@@ -133,10 +133,6 @@ header {
   transition: all 0.2s linear;
 }
 
-#avatar svg path {
-  transition: all 0.3s linear;
-}
-
 #about {
   display: flex;
   min-height: calc(100vh - 6rem);
