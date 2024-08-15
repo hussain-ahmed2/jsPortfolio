@@ -15,9 +15,10 @@ const spanColorChanger = () => {
   const span = document.querySelectorAll('.welcomeTextSpan');
   span.forEach(el => el.style.color = rgb());
   const svgIcon = document.querySelector('#avatar svg path');
-  svgIcon.setAttribute('fill', rgb());
+  const color = rgb();
+  svgIcon.setAttribute('fill', color);
   const avatar = document.getElementById('avatar');
-  avatar.style.borderColor = rgb();
+  avatar.style.borderColor = color;
 }
 
 const setPath = (path) => {
